@@ -31,3 +31,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+/* --- 新增的折叠功能逻辑 --- */
+
+// 1. 找到所有我们标记为“开关”的标题
+const collapsibleTitles = document.querySelectorAll('.category-title');
+
+// 2. 遍历每一个标题
+collapsibleTitles.forEach(title => {
+
+    // 3. 为每个标题添加一个点击事件监听器
+    title.addEventListener('click', function() {
+
+        // 当标题被点击时，切换它自己的 'is-active' class (用于改变 +/- 图标)
+        this.classList.toggle('is-active');
+
+        // 找到紧跟在标题后面的那个“内容区”元素
+        const content = this.nextElementSibling;
+
+        // 为内容区切换 'is-open' class
+        // 如果有 'is-open'，内容就展开；如果没有，就收起
+        content.classList.toggle('is-open');
+
+    });
+});

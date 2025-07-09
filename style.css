@@ -96,3 +96,45 @@ body {
     color: #007bff;
     transform: translateX(5px); /* 悬停时向右移动一点 */
 }
+/* --- 新增的折叠功能样式 --- */
+
+/* 让标题看起来可以点击 (鼠标悬停时变小手) */
+.category-title {
+    cursor: pointer;
+    user-select: none; /* 防止选中文本 */
+    position: relative; /* 用于定位图标 */
+    padding-right: 20px; /* 给图标留出空间 */
+}
+
+/* 用CSS的伪元素给标题后面加一个“+”号作为提示图标 */
+.category-title::after {
+    content: '+';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+    transition: transform 0.3s; /* 让图标旋转有动画 */
+}
+
+/* 当它展开时，让“+”号旋转45度，变成“×”号 */
+.category-title.is-active::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* 折叠内容区的核心样式 */
+.collapsible-content {
+    /* 用max-height来实现平滑的展开/收起动画 */
+    max-height: 0;
+    overflow: hidden; /* 隐藏超出高度的内容 */
+    transition: max-height 0.4s ease-in-out; /* 动画效果 */
+    padding-top: 0; /* 收起时顶部无内边距 */
+}
+
+/* 当内容区需要“展开”时，我们给它一个足够大的max-height */
+.collapsible-content.is-open {
+    max-height: 200px; /* 这个高度只要比内容实际高度大就行 */
+    padding-top: 15px; /* 展开时恢复顶部的内边距 */
+}
