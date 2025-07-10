@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>
-      <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -15,55 +10,49 @@
 
     <main class="container">
 
+        <div class="os-switcher">
+            <button class="os-button active" data-os="windows">
+                 <img src="images/windows.svg" alt="Windows" class="os-icon"> Windows软件
+            </button>
+            <button class="os-button" data-os="mac">
+                 <img src="images/mac.svg" alt="mac" class="os-icon"> mac软件
+            </button>
+        </div>
+
         <header class="search-box">
-            <select id="search-engine">
-                <option value="https://www.google.com/search?q=">谷歌</option>
-                <option value="https://www.bing.com/search?q=" selected>必应</option>
-                <option value="https://www.baidu.com/s?wd=">百度</option>
-            </select>
-            <input type="text" id="search-input" placeholder="在这里输入并搜索..." autofocus>
-            <button id="search-button">搜索</button>
+            <input type="text" id="search-input" placeholder="搜索网站内容..." autofocus>
         </header>
 
-        <div class="link-section">
-
- <div class="category">
-    <h2 class="category-title">常用工具</h2>
-
-    <div class="links collapsible-content">
-        <a href="https://fanyi.google.com/" target="_blank">谷歌翻译</a>
-        <a href="https://www.deepl.com/translator" target="_blank">DeepL</a>
-        <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>
-    </div>
-</div>
-            <div class="category">
-                <h2>影音娱乐</h2>
-                <div class="links">
-                    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-                    <a href="https://www.bilibili.com/" target="_blank">Bilibili</a>
-                    <a href="https://www.netflix.com/" target="_blank">Netflix</a>
-                </div>
+        <div class="tab-container">
+            <div class="tab-nav">
+                <button class="tab-button active" data-tab="photo">Adobe</button>
+                <button class="tab-button" data-tab="music">音乐播放</button>
+                <button class="tab-button" data-tab="office">视频剪辑</button>
             </div>
+            <div class="tab-content">
+                <div class="content-panel active" id="photo"></div>
+                <div class="content-panel" id="music"></div>
+                <div class="content-panel" id="office"></div>
 
-            <div class="category">
-                <h2>学习设计</h2>
-                <div class="links">
-                    <a href="https://github.com/" target="_blank">GitHub</a>
-                    <a href="https://www.figma.com/" target="_blank">Figma</a>
-                    <a href="https://www.canva.com/" target="_blank">Canva</a>
-                </div>
+<!--              <a href="https://www.google.com" target="_blank" class="ad-button">广告</a>-->
+<!--            </div> ```-->
+<!--            -->
             </div>
-
         </div>
+
+<!--     /*   ` `<div class="link-section">` /* -->
+<!--            <div class="category">-->
+<!--                <h2 class="category-title">常用工具</h2>-->
+<!--                <div class="links collapsible-content">-->
+<!--                    <a href="https://fanyi.google.com/" target="_blank">谷歌翻译</a>-->
+<!--                    <a href="https://www.deepl.com/translator" target="_blank">DeepL</a>-->
+<!--                    <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>``/*-->
 
     </main>
 
     <script src="script.js"></script>
-</body>
-</html>
-    </title>
-</head>
-<body>
-
 </body>
 </html>
